@@ -11,6 +11,6 @@ console.log(5 * 2);
 /* Zadziała */
 console.log("Hello World");
 //Błąd: nie ma ciapek, program nie wykona się, nie może znaleźć Hello i World a jeśli byłyby zmiennymi brakuje przecinka lub plusa
-console.log(Hello World);
+// console.log(Hello World);
 //Błąd nie ma ciapki na końcu, program się nie wykona
-console.log("Hello World);
+// console.log("Hello World);
