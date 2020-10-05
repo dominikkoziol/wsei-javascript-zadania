@@ -58,12 +58,54 @@ for(var i = 0; i < 6; i++){
     console.log(result);
 }
 
-//b)
-
-for(var i = 0; i < 5; i++)
-{
+// b)
+for (var i = 0; i < 5; i++) {
     var result = "";
-    for(var j = 0; j < i; j++) result += "* ";
+
+    for (var j = 4; j > i; j--) result += " ";
+    for (var j = 0; j <= i; j++) result += "* ";
+
+    console.log(result);
+}
+
+// c)
+for (var i = 0; i < 5; i++) {
+    var result = "";
+
+    for (var j = 4; j > i; j--) result += " ";
+    for (var j = 0; j <= i; j++) result += (j < i) ? "**" : "*";
+
+    console.log(result);
+}
+
+//d 
+for (var i = 0; i < 11; i++) {
+    var result = "";
+    for (var j = 0; j < 5; j++) {
+        if (i < 5) result += j <= i ? "*" : j;
+        else if (i > 5)  result = (j < i-6 ? (j-4) * (-1) : "*") + result;
+        else result = "-----";
+    }
+
+    console.log(result);
+}
+
+//e 
+
+
+for (var i = 0; i < 8; i++) {
+    var result = "";
     
+    if(i >= 5) {
+        for (var j = 0; j < 4; j++) {
+          result += " ";
+        }
+        result += "*";
+    }
+    else {
+        for (var j = 4; j > i; j--) result += " ";
+        for (var j = 0; j <= i; j++)  result += "* ";
+    }  
+  
     console.log(result);
 }
