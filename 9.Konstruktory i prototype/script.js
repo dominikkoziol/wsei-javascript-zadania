@@ -43,3 +43,86 @@ console.log(person2);
 console.log(person3);
 console.log(person4);
 console.log(person5);
+
+
+//TASK 2:
+class Calculator {
+    method = {
+        add: '+',
+        substraction: '-',
+        multiplication: '*',
+        division: '/'
+    }
+
+    result = 0;
+    memory = [];
+    
+    constructor() {
+
+    }
+
+    add(value) {
+        this.result += value;
+        this.save(this.method.add, value);
+    }
+
+    substraction(value) {
+        this.result -= value;
+        this.save(this.method.substraction, value);
+    }
+
+    multiplication(value) {
+        this.result = this.result * value;
+        this.save(this.method.multiplication, value);
+    }
+
+    division(value) {
+        // You can't divide by zero!
+        if(value != 0) {
+            this.result = this.result / value;
+            this.save(this.method.division, value);
+        }
+        else console.error("You can't divide by zero!")
+    }
+
+    save(method, value) {
+        this.memory.push(`${this.memory.length > 0 ?  method + value  : this.result + method + value}`);
+    }
+
+    showMemory() {
+        var mem = "";
+        this.memory.forEach(e => {
+            mem += e;
+        });
+
+        console.log(mem);
+    }
+
+    cleanMemory = () => this.memory = [];
+}
+
+var calculator1 = new Calculator();
+
+//Task 3:
+class Game {
+    value = 1;
+    constructor() {
+        this.changeValue();
+    }
+    checkValue() {
+        if(this.value > 5) return true;
+        else return false;
+    }
+
+    changeValue() {
+        let interval = setInterval(() => {
+            this.value = 1 + Math.floor((10 - 1) * Math.random());
+            console.log(this.value);
+            if(this.checkValue()) clearInterval(interval);
+        }, 1000)
+    }
+
+
+}
+
+var game = new Game();
