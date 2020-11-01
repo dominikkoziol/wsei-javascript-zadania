@@ -11,8 +11,10 @@ function getTags(tagName) {
 var tag = getTags("ul");
 console.log(tag)
 
-
 //Task 3:
+var list = document.getElementById("list");
+
+//Task 4:
 
 var allLi = getTags("li");
 var allUl = getTags("ul");
@@ -27,3 +29,4 @@ function writeResult(li, ul, spans, classLi,spansInSpans) {
     console.log("All spans in element with id 'spans': ", spansInSpans);
 }
 writeResult(allLi, allUl, allSpans, listClassElements, spanElementsInSpans);
+

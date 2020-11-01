@@ -58,3 +58,12 @@ var ex3 = document.getElementById("ex3");
 setEventListenerOnEx3Buttons(ex3);
 
 //TASK 5:
+
+
+
+//TASK 6:
+var ex6 = document.getElementById("ex6");
+
+var first = ex6.firstChild.firstChild.firstChild;
+var second = ex6.firstChild.parentElement.firstChild.firstChild.nextSibling.parentElement;
+var thrid = ex6.parentElement.firstChild.parentElement.childNodes[1].firstChild.firstChild.firstChild;
