@@ -37,7 +37,7 @@ function checkInput(e) {
 }
 
 
-//ex5:
+// ex5:
 // var x = 1;
 
 // document.getElementById("ex5").addEventListener("click", (e) => {
@@ -55,3 +55,21 @@ document.addEventListener("scroll", (e) => {
     else 
       body.style.backgroundColor = "white";
 });
+
+
+
+//ex7: 
+var numbers = document.getElementsByClassName("numbers");
+console.log(numbers);
+let x= i;
+for(var i = 0; i < numbers.length; i++) {
+    console.log(numbers[i])
+    numbers[i].addEventListener("click", function(e) {
+        makeNumber(e)
+    });
+}
+
+function makeNumber(i) {
+
+    console.log(i)
+}
