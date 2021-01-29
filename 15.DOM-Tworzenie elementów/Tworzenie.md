@@ -41,7 +41,7 @@ Stwórz formularz do którego będzie można wpisać jaki element user chce utwo
 
 #### Zadanie 9
 
-Stwórz formularz do którego będzie można wpisać dane tabelarczne takie jak:
+Stwórz formularz do którego będzie można wpisać dane tabelaryczne takie jak:
 
 1. Imię
 2. Nazwisko

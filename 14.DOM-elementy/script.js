@@ -64,9 +64,9 @@ manageClasses(classes);
 //ex 7 
 var longList = document.getElementById("longList").getElementsByTagName("li");
 function addMissingDataTextAttribute(element) {
-    for(var i = 0; i < element.length; i++) {
+    for (var i = 0; i < element.length; i++) {
         var attribute = element[i].getAttribute("data-text");
-        if(!attribute) element[i].setAttribute("data-text", "text");
+        if (!attribute) element[i].setAttribute("data-text", "text");
     }
 }
 
@@ -88,3 +88,47 @@ makeObject("sample");
 
 
 //ex 9:
+
+var numbers = document.getElementById("numbers");
+
+var random = Math.floor(Math.random() * 10);
+
+function addClassToNumbers(number) {
+    var className = number % 2 == 0 ? 'even' : 'odd';
+    numbers.classList.add(className);
+}
+
+addClassToNumbers(random);
+
+
+//ex 10, 11
+let longListElement = document.getElementById("longList");
+//ex 10:
+
+function getElementsFromList(list) {
+    var liElements = list.getElementsByTagName("li");
+    var valueContainer = [];
+
+    for (var i = 0; i < liElements.length; i++)
+        valueContainer.push(liElements[i].innerHTML);
+
+    console.log(valueContainer);
+}
+
+getElementsFromList(longListElement);
+
+//ex 11:
+
+function changeValues(list) {
+    var liElements = list.getElementsByTagName("li");
+
+
+    for (var i = 0; i < liElements.length; i++) {
+        liElements[i].setAttribute("data", liElements[i].innerHTML)
+        liElements[i].innerHTML = Math.floor(Math.random() * 10);
+    }
+
+
+}
+
+changeValues(longListElement);

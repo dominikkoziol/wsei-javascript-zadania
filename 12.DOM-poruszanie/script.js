@@ -58,12 +58,47 @@ var ex3 = document.getElementById("ex3");
 setEventListenerOnEx3Buttons(ex3);
 
 //TASK 5:
+var list = document.querySelector("div#ex5 ul");
+var divs = document.querySelectorAll("div#ex5 div");
+let allLi = document.querySelectorAll("div#ex5 li");
+var firstLi = allLi[0];
+var lastLi = allLi[allLi.length - 1];
+let oddElements = [];
+allLi.forEach((element, index) => {
+    if(index% 2 !== 0) oddElements.push(element);
+});
 
 
+
+for(let i=0; i<divs.length; i++){
+    divs[i].addEventListener("mouseover", function() {
+        const color = this.style.backgroundColor;
+        //firstLi.style.backgroundColor = color; 
+        //lastLi.style.backgroundColor = color;
+        
+        /*oddElements.forEach((element) => {
+            element.style.backgroundColor = color;
+        });*/
+        
+      /*  allLi.forEach((element) => {
+            element.style.backgroundColor = color;
+        }); */
+        list.style.backgroundColor = color;
+        
+    });
+
+}
 
 //TASK 6:
-var ex6 = document.getElementById("ex6");
+const mainDiv = document.getElementById('ex6');
 
-var first = ex6.firstChild.firstChild.firstChild;
-var second = ex6.firstChild.parentElement.firstChild.firstChild.nextSibling.parentElement;
-var thrid = ex6.parentElement.firstChild.parentElement.childNodes[1].firstChild.firstChild.firstChild;
+let one = mainDiv.firstElementChild.firstElementChild.firstElementChild;
+
+let two = mainDiv.firstElementChild.parentElement.firstElementChild.firstElementChild.nextElementSibling.parentElement;
+
+let three = mainDiv.parentElement.firstElementChild.parentElement.children[1].firstElementChild.firstElementChild.firstElementChild;
+
+
+console.log(one);
+console.log(two);
+console.log(three);

@@ -7,11 +7,11 @@ class Person {
     miasto;
     jezyk;
     constructor(imie, nazwisko, wiek, kraj, miasto, jezyk) {
-        Object.assign(this, {imie, nazwisko, wiek, kraj, miasto, jezyk});
+        Object.assign(this, { imie, nazwisko, wiek, kraj, miasto, jezyk });
     }
 
     changeAge(age) {
-        this.wiek = age; 
+        this.wiek = age;
     }
 
     changeCity(city) {
@@ -56,7 +56,7 @@ class Calculator {
 
     result = 0;
     memory = [];
-    
+
     constructor() {
 
     }
@@ -78,7 +78,7 @@ class Calculator {
 
     division(value) {
         // You can't divide by zero!
-        if(value != 0) {
+        if (value != 0) {
             this.result = this.result / value;
             this.save(this.method.division, value);
         }
@@ -86,7 +86,7 @@ class Calculator {
     }
 
     save(method, value) {
-        this.memory.push(`${this.memory.length > 0 ?  method + value  : this.result + method + value}`);
+        this.memory.push(`${this.memory.length > 0 ? method + value : this.result + method + value}`);
     }
 
     showMemory() {
@@ -103,26 +103,26 @@ class Calculator {
 
 var calculator1 = new Calculator();
 
-//Task 3:
-class Game {
-    value = 1;
-    constructor() {
-        this.changeValue();
-    }
-    checkValue() {
-        if(this.value > 5) return true;
-        else return false;
+
+//TASK 3: 
+function Game() {
+    this.numberChanger = () => {
+        Game.prototype.changerInterval = setInterval(() => {
+            Game.prototype.number = Math.round(Math.random() * 10);
+        }, 1000);
     }
 
-    changeValue() {
-        let interval = setInterval(() => {
-            this.value = 1 + Math.floor((10 - 1) * Math.random());
-            console.log(this.value);
-            if(this.checkValue()) clearInterval(interval);
-        }, 1000)
+    this.checkCondition = () => {
+        Game.prototype.conditionCheckerInterval = setInterval(() => {
+            if (Game.prototype.number > 5) {
+                clearInterval(Game.prototype.changerInterval);
+                clearInterval(Game.prototype.conditionCheckerInterval);
+            }
+        }, 1000);
     }
-
-
 }
 
-var game = new Game();
+var numberChanger = new Game();
+var numberChecker = new Game();
+numberChanger.numberChanger();
+numberChecker.checkCondition();

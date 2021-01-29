@@ -28,9 +28,9 @@ function changeSquareBackgroundColor(e, color) {
 
 //ex 4:
 var err = document.getElementById("ex3-err");
-document.getElementById("input-test").addEventListener("input", (e) => { 
-    if(checkInput(e)) err.innerHTML = "Nie możesz wpisywać cyfr";
- });
+document.getElementById("input-test").addEventListener("input", (e) => {
+    if (checkInput(e)) err.innerHTML = "Nie możesz wpisywać cyfr";
+});
 
 function checkInput(e) {
     return /^\d+$/.test(e.data);
@@ -50,26 +50,47 @@ function checkInput(e) {
 //ex6:
 var body = document.getElementsByTagName("body")[0];
 document.addEventListener("scroll", (e) => {
-    if(window.scrollY >= 200) 
+    if (window.scrollY >= 200)
         body.style.backgroundColor = "red";
-    else 
-      body.style.backgroundColor = "white";
+    else
+        body.style.backgroundColor = "white";
 });
 
 
 
 //ex7: 
-var numbers = document.getElementsByClassName("numbers");
-console.log(numbers);
-let x= i;
-for(var i = 0; i < numbers.length; i++) {
-    console.log(numbers[i])
-    numbers[i].addEventListener("click", function(e) {
-        makeNumber(e)
-    });
+const calc = () => {
+    let input = document.querySelectorAll('#calculator>div:first-of-type>button');
+    let output = document.querySelector('#calculator>input');
+    let actions = document.querySelectorAll('#calculator>:nth-child(5)>button');
+
+    for (const el of input) {
+        el.addEventListener('click', () => {
+            output.value = el.innerHTML;
+        })
+    }
+
+    let tempWynik = [];
+
+    const actionCreators = (object) => {
+        tempWynik.push(output.value, object.innerText)
+        console.log(tempWynik)
+        output.value = null
+        if (tempWynik.length > 3) {
+            output.value = eval(tempWynik.slice(0, -1).join(""))
+        }
+    }
+
+    for (const element of actions) {
+        element.addEventListener('click', () => {
+            console.log(element.innerText)
+            actionCreators(element)
+
+        })
+    }
+
+
+
 }
 
-function makeNumber(i) {
-
-    console.log(i)
-}
+calc();

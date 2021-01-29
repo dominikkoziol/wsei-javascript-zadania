@@ -10,7 +10,7 @@ console.log(5 * 2);
 //Task 3: 
 /* Zadziała */
 console.log("Hello World");
-//Błąd: nie ma ciapek, program nie wykona się, nie może znaleźć Hello i World a jeśli byłyby zmiennymi brakuje przecinka lub plusa
+//Błąd: nie ma cudzysłowów, program nie wykona się, nie może znaleźć Hello i World a jeśli byłyby zmiennymi brakuje przecinka lub plusa
 // console.log(Hello World);
-//Błąd nie ma ciapki na końcu, program się nie wykona
+//Błąd nie ma cudzysłowu na końcu, program się nie wykona
 // console.log("Hello World);
